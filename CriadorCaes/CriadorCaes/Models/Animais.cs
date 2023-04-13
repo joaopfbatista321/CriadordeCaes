@@ -1,4 +1,6 @@
-﻿namespace CriadorCaes.Models {
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CriadorCaes.Models {
    
     /// <summary>
     /// descrição dos Cães
@@ -36,6 +38,30 @@
         public string NumLOP { get; set; }
 
 
+        /*++++++++++++++++++++++++++++++++++
+         * criação das chaves forasteiras
+         * 
+         *++++++++++++++++++++++++++++++++++
+         */
+
+        /// <summary>
+        /// FK para o criador do cão/cadela
+        /// </summary>
+        [ForeignKey(nameof(Criador))]
+        public int CriadorFK { get; set; }
+
+        public Criadores Criador { get; set; }// efetivamente, esta é q e a FK 
+
+        /*
+         * o uso de [anotadores] serve para formatar o comportamento
+         * dos objetos por ele refrenciados
+         * estes objetos podem ser:
+         *  -atributos
+         *  -funçoes 
+         *  -classes
+         * 
+         * 
+         */
 
     }
 }
