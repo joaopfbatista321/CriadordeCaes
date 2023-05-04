@@ -58,6 +58,8 @@ namespace CriadorCaes.Models {
       /// </summary>
       [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
       [Display(Name ="Telemóvel")]
+      [StringLength(9,MinimumLength =9, ErrorMessage ="Deve escrever {1} digitos no numero de {0}")]
+      [RegularExpression()]
       public string Telemovel { get; set; }
 
       /* ++++++++++++++++++++++++++++++++++++++++++++++++
