@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CriadorCaes.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class updatedaultimaaula : Migration
+    public partial class Updatedaultimaaula : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

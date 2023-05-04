@@ -13,7 +13,7 @@ namespace CriadorCaes.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230504102302_updatedaultimaaula")]
-    partial class updatedaultimaaula
+    partial class Updatedaultimaaula
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

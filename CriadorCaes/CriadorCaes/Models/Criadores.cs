@@ -26,6 +26,7 @@ namespace CriadorCaes.Models {
       /// nome do criador
       /// </summary>
       [Required(ErrorMessage ="O {0} é de preenchimento obrigatório.")]
+        [StringLength(100)]
       public string Nome { get; set; }
 
       /// <summary>
@@ -33,17 +34,21 @@ namespace CriadorCaes.Models {
       /// no mercado de venda de animais
       /// </summary>
       [Display(Name ="Nome Comercial")]
+        [StringLength(50)]
       public string NomeComercial { get; set; }
 
-      /// <summary>
-      /// morada do criador
-      /// </summary>
+        /// <summary>
+        /// morada do criador
+        /// </summary>
+      [StringLength(60)]
       public string Morada { get; set; }
 
       /// <summary>
       /// Código Postal
       /// </summary>
       [Display(Name ="Código Postal")]
+      [RegularExpression("[1-9][0-9]{3}-[0-9]{3}(1,3)[A-Z -ÇÀÁÉÍÓÚÂÊÎÔÛ]+", ErrorMessage ="o {0} deve ter o formato XXXX-XXX NOME DA TERRA")]
+      [StringLength(40)]
       public string CodPostal { get; set; }
 
       /// <summary>
@@ -59,7 +64,7 @@ namespace CriadorCaes.Models {
       [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
       [Display(Name ="Telemóvel")]
       [StringLength(9,MinimumLength =9, ErrorMessage ="Deve escrever {1} digitos no numero de {0}")]
-      [RegularExpression()]
+      [RegularExpression("([0-9]{2,5})?[0-9]{5,14}")]
       public string Telemovel { get; set; }
 
       /* ++++++++++++++++++++++++++++++++++++++++++++++++
